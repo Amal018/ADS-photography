@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Space_Grotesk } from "next/font/google";
+import { Archivo, Public_Sans } from "next/font/google";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { StickyCta } from "@/components/StickyCta";
@@ -14,9 +14,9 @@ const archivo = Archivo({
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const publicSans = Public_Sans({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-public-sans",
   weight: ["500", "600", "700"],
   display: "swap",
 });
@@ -38,7 +38,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-IN" className={`${archivo.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en-IN" className={`${archivo.variable} ${publicSans.variable}`}>
       <body>
         <JsonLd data={localBusinessSchema()} />
         <SiteHeader />
