@@ -42,7 +42,7 @@ A local Coimbatore studio covering both personal milestones and commercial work 
 
 - Name: **ADS Photography**.
 - No logo exists yet; the site uses a text wordmark.
-- **The look must be professional and restrained.** The user rejected an illustrative, themed design ("like a cartoon"). Photographs lead; no decorative theming.
+- **The look must be professional and restrained.** The user rejected an illustrative, themed design ("like a cartoon"). From five professional themes they chose "Modern Swiss": pure white, bold uppercase sans headings, square black buttons, a strict grid. Photographs lead; no decorative theming.
 
 ## Evidence on Hand
 

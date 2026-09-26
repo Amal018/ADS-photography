@@ -51,7 +51,7 @@ export default async function ContactPage({ searchParams }: { searchParams: Sear
       <div className="mx-auto grid max-w-6xl gap-16 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.5fr_1fr]">
         <section aria-label="Enquiry form">
           {pkg ? (
-            <p className="mb-8 inline-flex rounded-full border border-line bg-stone px-4 py-1.5 text-sm font-medium">
+            <p className="mb-8 inline-flex border border-line bg-stone px-4 py-1.5 text-sm font-medium">
               Enquiring about the {pkg.name} package
             </p>
           ) : null}

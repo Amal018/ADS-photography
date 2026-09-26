@@ -47,7 +47,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           <ArrowIcon className="size-4 rotate-180" /> Journal
         </Link>
         <header className="mt-8 border-b border-line pb-10">
-          <h1 className="display text-[clamp(2.4rem,6vw,4rem)]">{post.title}</h1>
+          <h1 className="display text-[clamp(1.9rem,5vw,3.25rem)]">{post.title}</h1>
           <p className="mt-5 text-xl text-ink-soft">{post.description}</p>
           <p className="mt-6 text-sm text-muted">
             <time dateTime={post.date}>{dateFmt.format(new Date(post.date))}</time> · {site.name}

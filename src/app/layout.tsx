@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bodoni_Moda, Hanken_Grotesk } from "next/font/google";
+import { Archivo } from "next/font/google";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { StickyCta } from "@/components/StickyCta";
@@ -7,13 +7,12 @@ import { JsonLd, localBusinessSchema } from "@/components/JsonLd";
 import { site } from "@/content/site";
 import "./globals.css";
 
-const bodoni = Bodoni_Moda({
+const archivo = Archivo({
   subsets: ["latin"],
-  variable: "--font-bodoni",
-  axes: ["opsz"],
+  variable: "--font-archivo",
+  axes: ["wdth"],
   display: "swap",
 });
-const hanken = Hanken_Grotesk({ subsets: ["latin"], variable: "--font-hanken", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -27,12 +26,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#fafaf8",
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-IN" className={`${bodoni.variable} ${hanken.variable}`}>
+    <html lang="en-IN" className={archivo.variable}>
       <body>
         <JsonLd data={localBusinessSchema()} />
         <SiteHeader />

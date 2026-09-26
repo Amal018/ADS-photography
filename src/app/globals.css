@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
-/* ADS Photography: a quiet, professional studio site.
-   Neutral paper ground, near-black ink, fine rules, generous space.
-   The photographs carry the colour; the interface stays out of the way. */
+/* ADS Photography: Modern Swiss.
+   Pure white, black ink, bold uppercase sans headings, square controls,
+   a strict grid and hairline rules. The photographs carry the colour. */
 
 @theme {
-  --color-paper: #fafaf8;
-  --color-stone: #f0efec;
-  --color-line: #dcdbd6;
-  --color-ink: #151514;
-  --color-ink-soft: #4f4e4a;
-  --color-muted: #6b6a65;
-  --color-night: #121211;
-  --color-on-night: #f2f1ee;
-  --color-on-night-soft: #b4b2ac;
-  --color-placeholder: #e4e3df;
+  --color-paper: #ffffff;
+  --color-stone: #f3f3f3;
+  --color-line: #e2e2e2;
+  --color-ink: #0b0b0b;
+  --color-ink-soft: #4d4d4d;
+  --color-muted: #686868;
+  --color-night: #0b0b0b;
+  --color-on-night: #ffffff;
+  --color-on-night-soft: #b3b3b3;
+  --color-placeholder: #ececec;
   --color-error: #a3261a;
 
-  --font-display: var(--font-bodoni), "Didot", Georgia, serif;
-  --font-sans: var(--font-hanken), system-ui, sans-serif;
+  --font-display: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -62,17 +62,17 @@
     text-wrap: pretty;
   }
   html {
-    scrollbar-color: #9a9892 var(--color-stone);
+    scrollbar-color: #9a9a9a var(--color-stone);
   }
 }
 
 @layer components {
   .display {
     font-family: var(--font-display);
-    font-weight: 400;
-    letter-spacing: -0.015em;
-    line-height: 1.04;
-    font-variation-settings: "opsz" 96;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: -0.035em;
+    line-height: 0.98;
   }
 
   .btn {
@@ -88,7 +88,7 @@
     line-height: 1;
     text-decoration: none;
     border: 1px solid var(--color-ink);
-    border-radius: 999px;
+    border-radius: 0;
     transition:
       background-color 200ms var(--ease-out-expo),
       color 200ms var(--ease-out-expo),
@@ -99,8 +99,8 @@
     color: var(--color-paper);
   }
   .btn-primary:hover {
-    background: #2e2e2c;
-    border-color: #2e2e2c;
+    background: #333333;
+    border-color: #333333;
   }
   .btn-primary:disabled {
     opacity: 0.6;
@@ -139,7 +139,7 @@
     font-weight: 500;
     color: inherit;
     text-decoration: underline;
-    text-decoration-color: rgb(21 21 20 / 0.3);
+    text-decoration-color: rgb(11 11 11 / 0.3);
     transition: text-decoration-color 200ms var(--ease-out-expo);
   }
   .text-link:hover {
@@ -161,10 +161,10 @@
   }
 
   .prose-ads h2 {
-    font-family: var(--font-display);
-    font-size: 1.9rem;
+    font-weight: 600;
+    font-size: 1.6rem;
     line-height: 1.15;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
     margin-top: 2.75rem;
     margin-bottom: 0.5rem;
   }
@@ -192,7 +192,7 @@
     color: var(--color-ink);
     background: #ffffff;
     border: 1px solid #c9c8c2;
-    border-radius: 6px;
+    border-radius: 0;
     transition:
       border-color 160ms var(--ease-out-expo),
       box-shadow 160ms var(--ease-out-expo);
@@ -206,7 +206,7 @@
   .field:focus {
     outline: none;
     border-color: var(--color-ink);
-    box-shadow: 0 0 0 3px rgb(21 21 20 / 0.12);
+    box-shadow: 0 0 0 3px rgb(11 11 11 / 0.12);
   }
   .field[aria-invalid="true"] {
     border-color: var(--color-error);

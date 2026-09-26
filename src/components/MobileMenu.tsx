@@ -35,14 +35,14 @@ export function MobileMenu() {
   return (
     <details ref={ref} className="relative lg:hidden">
       <summary
-        className="grid size-11 cursor-pointer list-none place-items-center rounded-full border border-line text-ink [&::-webkit-details-marker]:hidden"
+        className="grid size-11 cursor-pointer list-none place-items-center border border-line text-ink [&::-webkit-details-marker]:hidden"
         aria-label="Menu"
       >
         <MenuIcon className="size-5" />
       </summary>
       <nav
         aria-label="Mobile"
-        className="absolute right-0 top-14 w-[min(86vw,20rem)] rounded-xl border border-line bg-paper p-3 shadow-[0_10px_20px_-10px_rgb(21_21_20/0.25)]"
+        className="absolute right-0 top-14 w-[min(86vw,20rem)] border border-line bg-paper p-3"
       >
         <ul className="flex flex-col">
           {nav.map((item) => (
@@ -50,7 +50,7 @@ export function MobileMenu() {
               <Link
                 href={item.href}
                 aria-current={pathname.startsWith(item.href) ? "page" : undefined}
-                className="block rounded-lg px-3 py-3 text-lg text-ink no-underline hover:bg-stone aria-[current=page]:bg-stone"
+                className="block px-3 py-3 text-lg text-ink no-underline hover:bg-stone aria-[current=page]:bg-stone"
               >
                 {item.label}
               </Link>

@@ -38,7 +38,7 @@ export function PortfolioGallery({
               type="button"
               aria-pressed={active === f.id}
               onClick={() => select(f.id)}
-              className="min-h-10 rounded-full border border-line px-4 text-sm font-medium text-ink-soft transition-colors hover:border-ink hover:text-ink aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-paper"
+              className="min-h-10 border border-line px-4 text-sm font-medium text-ink-soft transition-colors hover:border-ink hover:text-ink aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-paper"
             >
               {f.label}
             </button>

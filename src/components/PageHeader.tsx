@@ -15,7 +15,7 @@ export function PageHeader({
   return (
     <header className={dark ? "bg-night text-on-night" : "border-b border-line"}>
       <div className="mx-auto max-w-6xl px-5 pb-14 pt-14 sm:px-8 sm:pb-20 sm:pt-24">
-        <h1 className="display max-w-[18ch] text-[clamp(2.6rem,6.5vw,5rem)]">{title}</h1>
+        <h1 className="display max-w-[20ch] text-[clamp(2.1rem,6vw,4.5rem)]">{title}</h1>
         {intro ? (
           <p className={`mt-6 max-w-[58ch] text-lg sm:text-xl ${dark ? "text-on-night-soft" : "text-ink-soft"}`}>
             {intro}

@@ -24,7 +24,7 @@ export default function TestimonialsPage() {
             {sorted.map((t) => (
               <li key={`${t.name}-${t.date}`} className="py-10">
                 <figure>
-                  <blockquote className="display text-[clamp(1.5rem,3vw,2rem)] leading-snug">“{t.quote}”</blockquote>
+                  <blockquote className="text-[clamp(1.3rem,2.6vw,1.75rem)] font-medium leading-snug tracking-[-0.01em]">“{t.quote}”</blockquote>
                   <figcaption className="mt-5 flex flex-wrap gap-x-4 text-sm text-ink-soft">
                     <span className="font-medium text-ink">{t.name}</span>
                     <span>{t.service}</span>
@@ -36,7 +36,7 @@ export default function TestimonialsPage() {
             ))}
           </ul>
         ) : (
-          <div className="rounded-2xl border border-line bg-stone px-6 py-14 text-center sm:px-10">
+          <div className="border border-line bg-stone px-6 py-14 text-center sm:px-10">
             <p className="display text-3xl">Reviews are on their way</p>
             <p className="mx-auto mt-4 max-w-[46ch] text-ink-soft">
               We’re gathering reviews from recent clients. Worked with us? We’d love to hear from

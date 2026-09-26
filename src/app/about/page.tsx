@@ -13,7 +13,7 @@ export const metadata = pageMetadata({
 /** PLACEHOLDER copy is marked below. Replace it with the studio's real story and team. */
 function ToWrite({ children }: { children: React.ReactNode }) {
   return (
-    <p className="rounded-lg border border-dashed border-[#b9b7b0] px-4 py-3 text-base text-muted">
+    <p className="border border-dashed border-[#bdbdbd] px-4 py-3 text-base text-muted">
       <span className="font-medium text-ink-soft">To be written: </span>
       {children}
     </p>

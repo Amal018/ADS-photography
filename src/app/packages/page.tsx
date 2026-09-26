@@ -22,7 +22,7 @@ export default function PackagesPage() {
 
       <section aria-label="Packages" className="mx-auto mt-14 max-w-6xl px-5 sm:mt-20 sm:px-8">
         {!inclusionsConfirmed ? (
-          <p className="mb-8 rounded-lg border border-line bg-stone px-4 py-3 text-sm text-ink-soft">
+          <p className="mb-8 border border-line bg-stone px-4 py-3 text-sm text-ink-soft">
             Package details are being finalised. The inclusions below are an outline and will be
             confirmed with you when you enquire.
           </p>
@@ -31,7 +31,7 @@ export default function PackagesPage() {
           {packages.map((pkg, i) => (
             <li
               key={pkg.id}
-              className={`flex flex-col rounded-2xl border p-7 sm:p-9 ${
+              className={`flex flex-col border p-7 sm:p-9 ${
                 i === 1 ? "border-ink bg-white" : "border-line bg-white/60"
               }`}
             >

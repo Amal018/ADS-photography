@@ -30,7 +30,7 @@ export function ContactForm({
 
   if (state.ok) {
     return (
-      <div ref={doneRef} tabIndex={-1} className="rounded-2xl border border-line bg-stone px-6 py-12 outline-none sm:px-10" role="status">
+      <div ref={doneRef} tabIndex={-1} className="border border-line bg-stone px-6 py-12 outline-none sm:px-10" role="status">
         <p className="display text-4xl sm:text-5xl">Thank you</p>
         <p className="mt-4 max-w-[48ch] text-lg text-ink-soft">
           Your enquiry has reached the studio. We’ll get back to you soon. For anything urgent,
@@ -61,7 +61,7 @@ export function ContactForm({
   return (
     <form action={action} noValidate className="space-y-6">
       {state.message ? (
-        <div ref={summaryRef} tabIndex={-1} role="alert" className="rounded-lg border border-error/40 bg-[#fbeeec] px-4 py-3 text-sm font-medium text-error outline-none">
+        <div ref={summaryRef} tabIndex={-1} role="alert" className="border border-error/40 bg-[#fbeeec] px-4 py-3 text-sm font-medium text-error outline-none">
           {state.message}
         </div>
       ) : null}

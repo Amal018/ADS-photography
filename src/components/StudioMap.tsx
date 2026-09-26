@@ -19,14 +19,14 @@ export function StudioMap() {
       <iframe
         title={`Map showing ${site.name} in ${site.address.locality}`}
         src={embed}
-        className="block aspect-[4/3] w-full rounded-xl border border-line"
+        className="block aspect-[4/3] w-full border border-line"
         referrerPolicy="no-referrer-when-downgrade"
       />
     );
   }
 
   return (
-    <div className="flex aspect-[4/3] flex-col justify-between rounded-xl border border-line bg-stone p-6">
+    <div className="flex aspect-[4/3] flex-col justify-between border border-line bg-stone p-6">
       <div className="flex gap-3">
         <PinIcon className="mt-0.5 size-5 shrink-0 text-muted" />
         <div>

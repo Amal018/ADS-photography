@@ -35,7 +35,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="mx-auto grid max-w-6xl gap-12 px-5 pb-20 pt-12 sm:px-8 sm:pt-20 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-16 lg:pb-28">
         <div>
-          <h1 className="display rise text-[clamp(2.9rem,7.2vw,5.6rem)]">
+          <h1 className="display rise text-[clamp(2.2rem,8.6vw,4.9rem)]">
             Photography studio in Coimbatore
           </h1>
           <p className="rise mt-7 max-w-[44ch] text-lg text-ink-soft sm:text-xl" style={{ ["--i" as string]: 1 }}>
@@ -180,7 +180,7 @@ export default function HomePage() {
       {testimonial ? (
         <section aria-label="Client review" className="bg-stone">
           <figure className="mx-auto max-w-4xl px-5 py-20 text-center sm:px-8 sm:py-28">
-            <blockquote className="display text-[clamp(1.7rem,3.6vw,2.6rem)] leading-snug">
+            <blockquote className="text-[clamp(1.5rem,3vw,2.1rem)] font-medium leading-snug tracking-[-0.01em]">
               “{testimonial.quote}”
             </blockquote>
             <figcaption className="mt-6 text-ink-soft">

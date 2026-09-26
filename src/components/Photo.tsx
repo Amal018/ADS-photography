@@ -35,7 +35,7 @@ export function Photo({
         <div
           role="img"
           aria-label={`Placeholder for: ${photo.alt}`}
-          className="absolute inset-0 flex items-end bg-gradient-to-b from-[#e8e7e3] to-[#dddcd7] p-4"
+          className="absolute inset-0 flex items-end bg-gradient-to-b from-[#efefef] to-[#e6e6e6] p-4"
         >
           <span className="flex items-center gap-2 text-xs font-medium tracking-wide text-muted">
             <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">

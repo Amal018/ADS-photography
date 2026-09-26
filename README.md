@@ -48,12 +48,12 @@ All placeholder content is kept in `src/content/`:
 
 ## Design
 
-A clean, professional studio site where the photographs lead:
+Modern Swiss: a crisp, corporate site on a strict grid, where the photographs lead:
 
-- neutral paper background with fine rules
-- near-black text
-- Bodoni Moda headings with Hanken Grotesk body text
-- pill buttons
-- a dark band for calls to action and the corporate page headers
+- pure white background with hairline rules
+- black text
+- Archivo throughout, with bold uppercase headings
+- square black buttons
+- a black band for calls to action and the corporate page headers
 
 Design tokens live in `src/app/globals.css`. Product context is in `PRODUCT.md`; the design direction is in `.impeccable/surfaces/`.
