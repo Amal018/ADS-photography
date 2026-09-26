@@ -1,0 +1,75 @@
+import Link from "next/link";
+import { PageHeader } from "@/components/PageHeader";
+import { CtaBand } from "@/components/CtaBand";
+import { ArrowIcon } from "@/components/icons";
+import { formatPrice, inclusionsConfirmed, packages } from "@/content/packages";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Photography Packages & Pricing in Coimbatore",
+  description:
+    "Compare ADS Photography’s Essential, Signature and Luxury photography packages for weddings, maternity and family shoots in Coimbatore.",
+  path: "/packages",
+});
+
+export default function PackagesPage() {
+  return (
+    <>
+      <PageHeader
+        title="Packages"
+        intro="Three ways to work with us, from an intimate session to a multi-day wedding. Every package can be adjusted to your plans."
+      />
+
+      <section aria-label="Packages" className="mx-auto mt-14 max-w-6xl px-5 sm:mt-20 sm:px-8">
+        {!inclusionsConfirmed ? (
+          <p className="mb-8 rounded-lg border border-line bg-stone px-4 py-3 text-sm text-ink-soft">
+            Package details are being finalised. The inclusions below are an outline and will be
+            confirmed with you when you enquire.
+          </p>
+        ) : null}
+        <ol className="grid gap-5 lg:grid-cols-3">
+          {packages.map((pkg, i) => (
+            <li
+              key={pkg.id}
+              className={`flex flex-col rounded-2xl border p-7 sm:p-9 ${
+                i === 1 ? "border-ink bg-white" : "border-line bg-white/60"
+              }`}
+            >
+              <h2 className="display text-4xl">{pkg.name}</h2>
+              <p className="mt-3 text-ink-soft">{pkg.description}</p>
+              <p className="mt-7 border-t border-line pt-6 text-sm font-medium text-muted">
+                {formatPrice(pkg.price)}
+              </p>
+              <ul className="mt-6 flex-1 space-y-3">
+                {pkg.includes.map((item) => (
+                  <li key={item} className="flex gap-3 text-ink-soft">
+                    <svg viewBox="0 0 20 20" className="mt-1 size-4 shrink-0 text-ink" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                      <path d="M4 10.5l4 4 8-9" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href={`/contact?package=${pkg.id}`}
+                className={`btn mt-9 w-full ${i === 1 ? "btn-primary" : "btn-secondary"}`}
+              >
+                Enquire about {pkg.name} <ArrowIcon className="size-4" />
+              </Link>
+            </li>
+          ))}
+        </ol>
+        <p className="mt-10 max-w-[65ch] text-ink-soft">
+          Need something different, like a second photographer, an extra day or an album upgrade? Ask
+          us; packages are a starting point. Business or product work?{" "}
+          <Link href="/corporate" className="text-link text-ink">
+            See corporate services
+          </Link>
+          .
+        </p>
+      </section>
+
+      <CtaBand title="Not sure which fits?" text="Tell us about your event and we’ll recommend a package." />
+    </>
+  );
+}

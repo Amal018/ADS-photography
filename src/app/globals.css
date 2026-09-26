@@ -1,0 +1,233 @@
+@import "tailwindcss";
+
+/* ADS Photography: a quiet, professional studio site.
+   Neutral paper ground, near-black ink, fine rules, generous space.
+   The photographs carry the colour; the interface stays out of the way. */
+
+@theme {
+  --color-paper: #fafaf8;
+  --color-stone: #f0efec;
+  --color-line: #dcdbd6;
+  --color-ink: #151514;
+  --color-ink-soft: #4f4e4a;
+  --color-muted: #6b6a65;
+  --color-night: #121211;
+  --color-on-night: #f2f1ee;
+  --color-on-night-soft: #b4b2ac;
+  --color-placeholder: #e4e3df;
+  --color-error: #a3261a;
+
+  --font-display: var(--font-bodoni), "Didot", Georgia, serif;
+  --font-sans: var(--font-hanken), system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1px;
+  }
+  input,
+  select,
+  textarea {
+    caret-color: var(--color-ink);
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  html {
+    scrollbar-color: #9a9892 var(--color-stone);
+  }
+}
+
+@layer components {
+  .display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    line-height: 1.04;
+    font-variation-settings: "opsz" 96;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    min-height: 3rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    text-decoration: none;
+    border: 1px solid var(--color-ink);
+    border-radius: 999px;
+    transition:
+      background-color 200ms var(--ease-out-expo),
+      color 200ms var(--ease-out-expo),
+      border-color 200ms var(--ease-out-expo);
+  }
+  .btn-primary {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+  .btn-primary:hover {
+    background: #2e2e2c;
+    border-color: #2e2e2c;
+  }
+  .btn-primary:disabled {
+    opacity: 0.6;
+    cursor: progress;
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--color-ink);
+  }
+  .btn-secondary:hover {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+  .btn-light {
+    background: var(--color-on-night);
+    color: var(--color-night);
+    border-color: var(--color-on-night);
+  }
+  .btn-light:hover {
+    background: #ffffff;
+  }
+  .btn-ghost-light {
+    background: transparent;
+    color: var(--color-on-night);
+    border-color: rgb(242 241 238 / 0.5);
+  }
+  .btn-ghost-light:hover {
+    border-color: var(--color-on-night);
+    background: rgb(242 241 238 / 0.08);
+  }
+
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-weight: 500;
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: rgb(21 21 20 / 0.3);
+    transition: text-decoration-color 200ms var(--ease-out-expo);
+  }
+  .text-link:hover {
+    text-decoration-color: currentColor;
+  }
+
+  /* Photographs: the image scales very slightly on hover, nothing else moves. */
+  .photo {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-placeholder);
+  }
+  .photo > img {
+    transition: transform 900ms var(--ease-out-expo);
+  }
+  a:hover .photo > img,
+  a:focus-visible .photo > img {
+    transform: scale(1.025);
+  }
+
+  .prose-ads h2 {
+    font-family: var(--font-display);
+    font-size: 1.9rem;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-top: 2.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .prose-ads p {
+    margin-top: 1.1rem;
+  }
+  .prose-ads ul {
+    margin-top: 1.1rem;
+    padding-left: 1.2rem;
+    list-style: disc;
+  }
+  .prose-ads li {
+    margin-top: 0.4rem;
+    padding-left: 0.3rem;
+  }
+  .prose-ads li::marker {
+    color: var(--color-muted);
+  }
+
+  .field {
+    width: 100%;
+    min-height: 3.1rem;
+    padding: 0.75rem 0.95rem;
+    font: inherit;
+    color: var(--color-ink);
+    background: #ffffff;
+    border: 1px solid #c9c8c2;
+    border-radius: 6px;
+    transition:
+      border-color 160ms var(--ease-out-expo),
+      box-shadow 160ms var(--ease-out-expo);
+  }
+  .field::placeholder {
+    color: #6b6a65;
+  }
+  .field:hover {
+    border-color: #9e9c96;
+  }
+  .field:focus {
+    outline: none;
+    border-color: var(--color-ink);
+    box-shadow: 0 0 0 3px rgb(21 21 20 / 0.12);
+  }
+  .field[aria-invalid="true"] {
+    border-color: var(--color-error);
+    box-shadow: 0 0 0 3px rgb(163 38 26 / 0.12);
+  }
+}
+
+/* One orchestrated moment: the hero headline and images rise into place. */
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise 1000ms var(--ease-out-expo) both;
+    animation-delay: calc(var(--i, 0) * 110ms);
+  }
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
