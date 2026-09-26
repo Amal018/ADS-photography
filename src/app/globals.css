@@ -17,7 +17,7 @@
   --color-placeholder: #ececec;
   --color-error: #a3261a;
 
-  --font-display: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-space-grotesk), "Helvetica Neue", Arial, sans-serif;
   --font-sans: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
