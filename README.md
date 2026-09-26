@@ -2,6 +2,11 @@
 
 The website for ADS Photography, a photography studio in Coimbatore. It is built with Next.js (App Router) and Tailwind CSS, and is designed to deploy on Vercel.
 
+## Requirements
+
+- Node.js 20.9 or newer (includes npm): https://nodejs.org
+- Git, or download the ZIP from GitHub
+
 ## Run it
 
 ```bash
