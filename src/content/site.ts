@@ -22,6 +22,8 @@ export const site = {
   phoneHref: "tel:+919842343219",
   whatsapp: "919842343219", // digits only, country code first, used for wa.me links
   email: "hello@example.com", // PLACEHOLDER
+  /** Website enquiries are emailed here via FormSubmit (first address is the main recipient, the rest are CC'd). */
+  enquiryEmails: ["annaidigitalantony@gmail.com", "amaljr0018@gmail.com"],
   address: {
     street: "Street address to be confirmed", // PLACEHOLDER
     locality: "Coimbatore",

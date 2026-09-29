@@ -31,7 +31,31 @@ export type InquiryState = {
   errors: Partial<Record<FieldName, string>>;
   message?: string;
   values?: Partial<Record<FieldName, string>>;
+  /** Enquiry details as plain text, for the visitor's prefilled WhatsApp message. */
+  whatsappText?: string;
 };
+
+export function serviceLabel(value: ServiceInterest) {
+  return serviceOptions.find((o) => o.value === value)?.label ?? value;
+}
+
+export function inquirySummary(
+  i: Pick<BookingInquiry, "name" | "phone" | "email" | "serviceInterest" | "preferredDate" | "packageId" | "message">,
+  heading: string,
+) {
+  return [
+    heading,
+    `Name: ${i.name}`,
+    `Phone: ${i.phone}`,
+    `Email: ${i.email}`,
+    `Shoot: ${serviceLabel(i.serviceInterest)}`,
+    i.preferredDate ? `Preferred date: ${i.preferredDate}` : null,
+    i.packageId ? `Package: ${i.packageId}` : null,
+    i.message ? `Message: ${i.message}` : null,
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 

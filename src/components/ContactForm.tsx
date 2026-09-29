@@ -33,11 +33,16 @@ export function ContactForm({
       <div ref={doneRef} tabIndex={-1} className="border border-line bg-stone px-6 py-12 outline-none sm:px-10" role="status">
         <p className="display text-4xl sm:text-5xl">Thank you</p>
         <p className="mt-4 max-w-[48ch] text-lg text-ink-soft">
-          Your enquiry has reached the studio. We’ll get back to you soon. For anything urgent,
-          WhatsApp is the fastest way to reach us.
+          Your enquiry has reached the studio. We’ll get back to you soon. For a faster reply, send the
+          same details to us on WhatsApp.
         </p>
-        <a href={whatsappLink("Hi ADS Photography, I just sent an enquiry from your website.")} className="btn btn-secondary mt-7">
-          <WhatsAppIcon className="size-4" /> WhatsApp us
+        <a
+          href={whatsappLink(state.whatsappText ?? "Hi ADS Photography, I just sent an enquiry from your website.")}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-secondary mt-7"
+        >
+          <WhatsAppIcon className="size-4" /> Send these details on WhatsApp
         </a>
       </div>
     );

@@ -18,7 +18,16 @@ npm run build      # production build
 Copy `.env.example` to `.env.local` and set:
 
 - `NEXT_PUBLIC_SITE_URL`: the live domain, used for canonical links, `sitemap.xml` and structured data.
-- `CONTACT_WEBHOOK_URL` (optional): each validated enquiry is POSTed here as JSON (Zapier/Make, Google Apps Script, a CRM). Without it, enquiries are only written to the server log.
+- `CALLMEBOT_API_KEY` (optional): sends each enquiry to the studio WhatsApp number as a message. See "Enquiries" below.
+- `CONTACT_WEBHOOK_URL` (optional): each validated enquiry is also POSTed here as JSON (Zapier/Make, Google Apps Script, a CRM).
+
+### Enquiries
+
+The contact form emails every enquiry through [FormSubmit](https://formsubmit.co) to the addresses in `enquiryEmails` in `src/content/site.ts`. The first address receives it and the others are CC'd.
+
+- **Activate once after deploying.** Send one test enquiry from the live site. FormSubmit then emails the first address an "Activate Form" button. Enquiries are forwarded only after it is clicked. Until then, the form shows the visitor an error.
+- **WhatsApp alerts.** From the studio WhatsApp phone, follow the CallMeBot setup at https://www.callmebot.com/blog/free-api-whatsapp-messages/ to get an API key. Set it as `CALLMEBOT_API_KEY` in the host's environment variables (Netlify: Site configuration → Environment variables), then redeploy.
+- After sending, visitors also get a button that opens WhatsApp with their enquiry already typed out.
 
 ## What's built
 
