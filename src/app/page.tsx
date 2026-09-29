@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { Photo } from "@/components/Photo";
 import { CtaBand } from "@/components/CtaBand";
-import { ArrowIcon, WhatsAppIcon } from "@/components/icons";
+import { ArrowIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
 import { photos, type Photo as PhotoData } from "@/content/portfolio";
 import { packages, formatPrice } from "@/content/packages";
 import { posts } from "@/content/posts";
 import { testimonials } from "@/content/testimonials";
-import { whatsappLink } from "@/content/site";
+import { site, whatsappLink } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = {
@@ -46,12 +46,22 @@ export default function HomePage() {
             <Link href="/contact" className="btn btn-primary">
               Book a shoot <ArrowIcon className="size-4" />
             </Link>
-            <a
-              href={whatsappLink("Hi ADS Photography, I'd like to enquire about a shoot.")}
-              className="btn btn-secondary"
-            >
-              <WhatsAppIcon className="size-4" /> WhatsApp
-            </a>
+            <div className="flex gap-3">
+              <a
+                href={whatsappLink("Hi ADS Photography, I'd like to enquire about a shoot.")}
+                className="btn btn-secondary"
+              >
+                <WhatsAppIcon className="size-4" /> WhatsApp
+              </a>
+              <a
+                href={site.phoneHref}
+                className="btn btn-secondary w-12 px-0"
+                aria-label={`Call ${site.phone}`}
+                title={`Call ${site.phone}`}
+              >
+                <PhoneIcon className="size-4" />
+              </a>
+            </div>
           </div>
           <ul className="rise mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-line pt-6 text-sm text-ink-soft" style={{ ["--i" as string]: 3 }}>
             <li><Link href="/portfolio" className="text-link">Portfolio</Link></li>
