@@ -21,7 +21,7 @@ export const site = {
   // PLACEHOLDER: contact details
   phone: "+91 00000 00000",
   phoneHref: "tel:+910000000000",
-  whatsapp: "910000000000", // digits only, country code first, used for wa.me links
+  whatsapp: "919842343219", // digits only, country code first, used for wa.me links
   email: "hello@example.com",
   address: {
     street: "Street address to be confirmed", // PLACEHOLDER
