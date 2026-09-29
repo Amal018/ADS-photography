@@ -18,11 +18,10 @@ export const site = {
   /** Flip to true once the real details below are filled in. */
   detailsConfirmed: false,
 
-  // PLACEHOLDER: contact details
-  phone: "+91 00000 00000",
-  phoneHref: "tel:+910000000000",
+  phone: "+91 98423 43219",
+  phoneHref: "tel:+919842343219",
   whatsapp: "919842343219", // digits only, country code first, used for wa.me links
-  email: "hello@example.com",
+  email: "hello@example.com", // PLACEHOLDER
   address: {
     street: "Street address to be confirmed", // PLACEHOLDER
     locality: "Coimbatore",
