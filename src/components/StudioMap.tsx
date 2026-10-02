@@ -7,8 +7,8 @@ import { PinIcon } from "./icons";
 
 /**
  * Google Maps embed, loaded on request so the third-party iframe stays off the
- * critical path. Until the studio's coordinates are set in site.ts, the card
- * says the location is to be confirmed instead of pointing at a guessed pin.
+ * critical path. Until the studio's coordinates are set in site.ts there is no
+ * embed (no guessed pin), just a directions link that searches the address.
  */
 export function StudioMap() {
   const [show, setShow] = useState(false);
@@ -53,18 +53,16 @@ export function StudioMap() {
           <p className="mt-1 text-ink-soft">{formattedAddress()}</p>
         </div>
       </div>
-      {embed && link ? (
-        <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2">
+        {embed ? (
           <button type="button" onClick={() => setShow(true)} className="btn btn-primary">
             Show map
           </button>
-          <a href={link} className="btn btn-secondary" target="_blank" rel="noopener">
-            Open in Google Maps
-          </a>
-        </div>
-      ) : (
-        <p className="text-sm text-muted">Map location to be confirmed.</p>
-      )}
+        ) : null}
+        <a href={link} className={`btn ${embed ? "btn-secondary" : "btn-primary"}`} target="_blank" rel="noopener">
+          Get directions
+        </a>
+      </div>
     </div>
   );
 }

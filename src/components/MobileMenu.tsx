@@ -54,6 +54,21 @@ export function MobileMenu() {
               >
                 {item.label}
               </Link>
+              {item.children ? (
+                <ul className="mb-1 ml-3 border-l border-line">
+                  {item.children.map((child) => (
+                    <li key={child.href}>
+                      <Link
+                        href={child.href}
+                        aria-current={pathname === child.href ? "page" : undefined}
+                        className="block px-4 py-2.5 text-base text-ink-soft no-underline hover:bg-stone aria-[current=page]:bg-stone aria-[current=page]:text-ink"
+                      >
+                        {child.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </li>
           ))}
         </ul>

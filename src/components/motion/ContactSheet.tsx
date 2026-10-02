@@ -79,7 +79,7 @@ export function ContactSheet({ photos, titleId }: { photos: PhotoData[]; titleId
         <Link
           key={photo.id}
           href="/portfolio"
-          aria-label={`${photo.alt}. View the portfolio`}
+          aria-label={`${photo.alt}. See all moments`}
           className="relative block h-[var(--fh)] shrink-0 snap-center no-underline outline-offset-4 first:snap-start"
           style={{ aspectRatio: photo.ratio }}
           onPointerEnter={() => setPick(i)}
@@ -106,7 +106,7 @@ export function ContactSheet({ photos, titleId }: { photos: PhotoData[]; titleId
   const footer = (
     <div className="flex flex-wrap gap-3">
       <Link href="/portfolio" className="btn btn-light">
-        Full portfolio <ArrowIcon className="size-4" />
+        All moments <ArrowIcon className="size-4" />
       </Link>
       <Link href="/packages" className="btn btn-ghost-light">
         View pricing

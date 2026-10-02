@@ -60,7 +60,6 @@ export function BeforeAfter({
   return (
     <div
       ref={box}
-      data-cursor="view"
       className="relative select-none overflow-hidden bg-placeholder"
       style={{ aspectRatio: Math.max(after.ratio, 1.2), touchAction: "pan-y" }}
       onPointerDown={(e) => {

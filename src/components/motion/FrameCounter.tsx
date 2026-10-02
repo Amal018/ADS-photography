@@ -1,16 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, useMotionValueEvent, useReducedMotion, useScroll } from "framer-motion";
 
 const ROLL = 36;
 
 /**
  * A film-roll frame counter in the corner of wide screens: reading down a
- * page winds the film on from frame 01 to 36.
+ * page winds the film on from frame 01 to 36. Hidden on the Moments pages,
+ * where the mode dial's LCD already counts frames.
  */
 export function FrameCounter() {
   const reduce = useReducedMotion();
+  const pathname = usePathname();
   const { scrollYProgress } = useScroll();
   const [frame, setFrame] = useState(1);
   const [end, setEnd] = useState(false);
@@ -20,6 +23,8 @@ export function FrameCounter() {
     // Step aside at the end of the roll so the footer's last line stays clear.
     setEnd(p > 0.985);
   });
+
+  if (pathname.startsWith("/portfolio")) return null;
 
   return (
     <div

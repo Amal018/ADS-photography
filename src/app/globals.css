@@ -26,7 +26,7 @@
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 6rem;
   }
   body {
     background: var(--color-paper);
@@ -333,11 +333,4 @@
     transform: none !important;
     filter: none !important;
   }
-}
-
-/* Camera cursor: over photographs the focus ring replaces the system cursor. */
-html[data-camera-cursor] a .photo,
-html[data-camera-cursor] button .photo,
-html[data-camera-cursor] [data-cursor="view"] {
-  cursor: none;
 }

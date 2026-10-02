@@ -4,7 +4,6 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { StickyCta } from "@/components/StickyCta";
 import { JsonLd, localBusinessSchema } from "@/components/JsonLd";
-import { CameraCursor } from "@/components/motion/CameraCursor";
 import { PageShutter } from "@/components/motion/PageShutter";
 import { FrameCounter } from "@/components/motion/FrameCounter";
 import { site } from "@/content/site";
@@ -50,7 +49,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <StickyCta />
         <FrameCounter />
         <PageShutter />
-        <CameraCursor />
       </body>
     </html>
   );

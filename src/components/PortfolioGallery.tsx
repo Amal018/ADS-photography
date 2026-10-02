@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Photo } from "./Photo";
-import { LensDial } from "./motion/LensDial";
+import { CameraDial } from "./motion/CameraDial";
 import { Lightbox } from "./motion/Lightbox";
 import type { Category, Photo as PhotoData } from "@/content/portfolio";
 
@@ -47,10 +47,11 @@ export function PortfolioGallery({
   return (
     <div>
       {filters ? (
-        <LensDial
+        <CameraDial
           options={[{ id: "all" as const, label: "All work" }, ...filters]}
           active={active}
           onSelect={(id) => select(id as Filter)}
+          counts={Object.fromEntries([["all", photos.length], ...filters.map((f) => [f.id, photos.filter((p) => p.category === f.id).length])])}
         />
       ) : null}
       <p className="sr-only" aria-live="polite">

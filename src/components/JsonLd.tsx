@@ -19,19 +19,21 @@ export function localBusinessSchema() {
     "@type": "LocalBusiness",
     "@id": `${site.url}/#business`,
     name: site.name,
+    alternateName: site.formerName,
     description: site.description,
+    priceRange: site.priceRange,
     url: site.url,
     areaServed: site.areaServed.map((name) => ({ "@type": "City", name })),
     ...(confirmed
       ? {
           telephone: site.phone,
-          email: site.email,
+          ...(site.email ? { email: site.email } : {}),
           address: {
             "@type": "PostalAddress",
             streetAddress: site.address.street,
             addressLocality: site.address.locality,
             addressRegion: site.address.region,
-            postalCode: site.address.postalCode,
+            ...(site.address.postalCode ? { postalCode: site.address.postalCode } : {}),
             addressCountry: site.address.country,
           },
           ...(site.geo

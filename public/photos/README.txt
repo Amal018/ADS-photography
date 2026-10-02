@@ -40,12 +40,14 @@ home/selected-work/   Home page, "Selected work". All photos are shown.
 portfolio/weddings/   /portfolio/weddings and /portfolio
 portfolio/maternity/  /portfolio/maternity and /portfolio
 portfolio/family/     /portfolio/maternity (Family filter) and /portfolio
-portfolio/product/    /portfolio and /corporate (first 2 photos)
+portfolio/product/    /portfolio (and /corporate while corporate/events is empty)
 
 about/studio/         About page, studio photo (the first file)
-about/team/           About page, team portraits in order:
-                      1 = founder & lead photographer, 2 = photographer,
-                      3 = editor & album designer
+about/proprietor/     About page, portrait of Anthony Raj J (the first file).
+                      Until one is added, the page shows an "AR" monogram.
+
+corporate/events/     Corporate page, the two photos beside "How a retainer works"
+                      (big events and celebrations). Empty = product photos.
 
 An empty folder shows grey "photo to come" frames until you add photos.
 
@@ -54,13 +56,12 @@ STAND-IN STOCK PHOTOS - REPLACE BEFORE LAUNCH
 ---------------------------------------------
 These folders were filled with free Unsplash photos (Unsplash License: free
 for commercial use, no attribution required) so no slot shows an empty frame.
-They are NOT the studio's own work or team. Replace each one with a real ADS
+They are NOT the studio's own work. Replace each one with a real ADS
 Photography photo before the site goes live: delete the file and drop yours in.
 
   about/studio/1-photography-studio-with-a-lantern-softbox.jpg     Neon Wang
-  about/team/1-founder-and-lead-photographer.jpg                   Aravind Kumar
-  about/team/2-photographer.jpg                                    Talie Ashrafi
-  about/team/3-editor-and-album-designer.jpg                       Sanju Pandita
+  corporate/events/1-conference-stage-with-a-full-audience.jpg     Tyler Witkin
+  corporate/events/2-gala-dinner-celebration.jpg                   Filip Rankovic Grobgaard
   home/services/product-dropper-bottle-on-a-studio-table.jpg       Content Pixie
   portfolio/family/1-family-portrait-together.jpg                  Rohit Dey
   portfolio/family/2-newborn-held-in-a-parents-hand.jpg            Kelly Sikkema

@@ -12,12 +12,12 @@ export type Faq = { q: string; a: string; link?: { href: string; label: string }
 export const faqs: Faq[] = [
   {
     q: "How much does candid wedding photography cost in Coimbatore?",
-    a: "It depends on the hours of coverage, the number of photographers and whether you want an album. Our Essential, Signature and Luxury packages cover everything from an intimate ceremony to a multi-day wedding. Send us your date and we’ll share the price details for the package that fits.",
+    a: "It depends on the hours of coverage, the number of photographers and whether you want an album. Our Essential, Signature and Luxury packages cover everything from an intimate ceremony to a multi-day wedding. Packages are customisable and start from ₹5,000; send us your date and we’ll confirm the price for the package that fits.",
     link: { href: "/packages", label: "Compare wedding photography packages" },
   },
   {
     q: "Do you offer budget wedding photography packages?",
-    a: "Yes. The Essential package is our most affordable option, with focused coverage for smaller ceremonies, maternity and family sessions, and every package can be adjusted to your plans and budget.",
+    a: "Yes. Packages start from ₹5,000. The Essential package is our most affordable option, with focused coverage for smaller ceremonies, maternity and family sessions, and every package can be adjusted to your plans and budget.",
     link: { href: "/packages", label: "See the packages" },
   },
   {
@@ -36,7 +36,12 @@ export const faqs: Faq[] = [
   },
   {
     q: "Which areas of Coimbatore do you cover?",
-    a: "We photograph across Coimbatore, including RS Puram, Peelamedu, Gandhipuram, Saravanampatti and Saibaba Colony, and travel to Pollachi, Tirupur, Mettupalayam and Erode for weddings and events.",
+    a: "Our studio is in Maniyakarampalayam, Ganapathy (opposite State Bank), and we photograph across Coimbatore, including RS Puram, Peelamedu, Gandhipuram, Saravanampatti and Saibaba Colony, and travel to Pollachi, Tirupur, Mettupalayam and Erode for weddings and events.",
+  },
+  {
+    q: "Do you take passport photos and print photo frames?",
+    a: "Yes. Alongside our shoots, the studio in Maniyakarampalayam does passport photos, photo frames, canvas prints, acrylic frames, flex printing and customised photo gifts, all under one roof.",
+    link: { href: "/about", label: "Everything the studio offers" },
   },
   {
     q: "Do you photograph babies, newborns and kids?",

@@ -3,12 +3,11 @@ import { Photo } from "@/components/Photo";
 import { CtaBand } from "@/components/CtaBand";
 import { ArrowIcon, WhatsAppIcon } from "@/components/icons";
 import { photos, type Photo as PhotoData } from "@/content/portfolio";
-import { packages, formatPrice } from "@/content/packages";
+import { packages, formatPrice, startingPrice } from "@/content/packages";
 import { posts } from "@/content/posts";
 import { testimonials } from "@/content/testimonials";
 import { whatsappLink } from "@/content/site";
 import { namedSlot, photosIn, slots } from "@/lib/photos";
-import type { Package } from "@/content/packages";
 import { pageMetadata } from "@/lib/seo";
 import { ShutterIntro } from "@/components/motion/ShutterIntro";
 import { FocusHeadline } from "@/components/motion/FocusHeadline";
@@ -18,8 +17,8 @@ import { ContactSheet } from "@/components/motion/ContactSheet";
 import { Reveal } from "@/components/motion/Reveal";
 import { ShutterButton } from "@/components/motion/ShutterButton";
 import { BeforeAfter } from "@/components/motion/BeforeAfter";
-import { LightMeter } from "@/components/motion/LightMeter";
 import { Polaroid } from "@/components/motion/Polaroid";
+import { Lens } from "@/components/motion/Lens";
 import { JsonLd } from "@/components/JsonLd";
 import { faqs, faqSchema } from "@/content/faq";
 
@@ -63,9 +62,6 @@ function beforeAfter(fallback: PhotoData) {
   return null;
 }
 
-// Where each package sits on the light meter: more coverage, more exposure.
-const meterStop: Record<Package["id"], number> = { essential: -1, signature: 1, luxury: 2 };
-
 // The review's Polaroid shows work from the same kind of shoot.
 const reviewPhoto = { Wedding: 0, Maternity: 1, Family: 1, Corporate: 2 } as const;
 
@@ -85,9 +81,9 @@ export default function HomePage() {
             className="display text-[clamp(2.2rem,8.6vw,4.9rem)]"
           />
           <p className="rise mt-7 max-w-[44ch] text-lg text-ink-soft sm:text-xl" style={{ ["--i" as string]: 1 }}>
-            A professional photo studio in Coimbatore for candid weddings, maternity and baby
-            photoshoots, family portraits and product photography, made with care from the first
-            call to the final album.
+            A professional photo studio in Coimbatore with 20+ years of experience in candid
+            weddings, maternity and baby photoshoots, family portraits and product photography,
+            made with care from the first call to the final album.
           </p>
           <div className="rise mt-10 flex flex-wrap gap-3" style={{ ["--i" as string]: 2 }}>
             <ShutterButton href="/contact" className="btn btn-primary">
@@ -101,7 +97,7 @@ export default function HomePage() {
             </a>
           </div>
           <ul className="rise mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-line pt-6 text-sm text-ink-soft" style={{ ["--i" as string]: 3 }}>
-            <li><Link href="/portfolio" className="text-link">Portfolio</Link></li>
+            <li><Link href="/portfolio" className="text-link">Moments</Link></li>
             <li><Link href="/packages" className="text-link">Packages</Link></li>
             <li><Link href="/corporate" className="text-link">For businesses</Link></li>
           </ul>
@@ -123,7 +119,7 @@ export default function HomePage() {
               Photography services in Coimbatore
             </h2>
             <Link href="/portfolio" className="text-link">
-              View the portfolio <ArrowIcon className="size-4" />
+              See all moments <ArrowIcon className="size-4" />
             </Link>
           </Reveal>
           <ul className="mt-12 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4">
@@ -207,6 +203,9 @@ export default function HomePage() {
             <h2 id="packages" className="display text-[clamp(2.1rem,4.5vw,3.25rem)]">
               Photography packages
             </h2>
+            <p className="w-full text-lg text-ink-soft sm:order-last">
+              Customisable packages starting from {formatPrice(startingPrice)}. Confirm the price for your date on request.
+            </p>
             <Link href="/packages" className="text-link">
               Compare packages <ArrowIcon className="size-4" />
             </Link>
@@ -218,10 +217,12 @@ export default function HomePage() {
                 className={`border-b border-line py-8 sm:border-b-0 sm:py-10 ${i > 0 ? "sm:border-l sm:pl-8" : ""} ${i < 2 ? "sm:pr-8" : ""}`}
               >
                 <Reveal delay={i * 0.1}>
+                  <div className="mb-5">
+                    <Lens lens={pkg.lens} size="sm" standalone />
+                  </div>
                   <h3 className="display text-3xl">{pkg.name}</h3>
                   <p className="mt-3 text-ink-soft">{pkg.description}</p>
                   <p className="mt-6 text-sm font-medium text-muted">{formatPrice(pkg.price)}</p>
-                  <LightMeter stop={meterStop[pkg.id]} label={`Coverage level for the ${pkg.name} package`} />
                 </Reveal>
               </li>
             ))}

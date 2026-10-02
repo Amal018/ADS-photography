@@ -1,11 +1,16 @@
+import Image from "next/image";
 import { site } from "@/content/site";
 
-/** Text wordmark used until the studio supplies a logo. */
+/** The studio's logo (public/brand), with a white version for dark backgrounds. */
 export function Wordmark({ light = false }: { light?: boolean }) {
   return (
-    <span className={`flex items-baseline gap-2 ${light ? "text-on-night" : "text-ink"}`} aria-label={site.name}>
-      <span className="display text-[1.7rem] leading-none tracking-[0.02em]">ADS</span>
-      <span className="text-[0.7rem] font-medium uppercase tracking-[0.28em] opacity-80">Photography</span>
-    </span>
+    <Image
+      src={light ? "/brand/ads-camera-logo-stacked-white.png" : "/brand/ads-camera-logo-stacked.png"}
+      alt={site.name}
+      width={188}
+      height={159}
+      priority={!light}
+      className={light ? "h-24 w-auto" : "h-[4.25rem] w-auto"}
+    />
   );
 }

@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { PortfolioGallery } from "@/components/PortfolioGallery";
 import { CtaBand } from "@/components/CtaBand";
 import { gallery } from "@/lib/photos";
+import { ModeReadout } from "@/components/motion/ModeReadout";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -13,6 +14,7 @@ export const metadata = pageMetadata({
 });
 
 export default function WeddingsPage() {
+  const photos = gallery("weddings");
   return (
     <>
       <PageHeader
@@ -20,7 +22,8 @@ export default function WeddingsPage() {
         intro="Marriage photography from the engagement photoshoot and nichayathartham to the reception: every ritual, every elder’s blessing, and the quiet moments in between."
       />
       <section className="mx-auto mt-12 max-w-6xl px-5 sm:px-8">
-        <PortfolioGallery photos={gallery("weddings")} />
+        <ModeReadout href="/portfolio/weddings" frames={photos.length} />
+        <PortfolioGallery photos={photos} />
         <p className="mt-8 max-w-[65ch] text-ink-soft">
           Planning your coverage? Read{" "}
           <Link href="/blog/wedding-photographer-coimbatore" className="text-link text-ink">

@@ -1,6 +1,6 @@
 import { PageHeader } from "@/components/PageHeader";
 import { ContactForm } from "@/components/ContactForm";
-import { MailIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
+import { ClockIcon, MailIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
 import { packages } from "@/content/packages";
 import { corporateServices } from "@/content/corporate";
 import { site, whatsappLink } from "@/content/site";
@@ -82,11 +82,17 @@ export default async function ContactPage({ searchParams }: { searchParams: Sear
               </a>
             </p>
             <p className="flex gap-3">
-              <MailIcon className="mt-1 size-4 shrink-0 text-muted" />
-              <a href={`mailto:${site.email}`} className="text-link text-ink">
-                {site.email}
-              </a>
+              <ClockIcon className="mt-1 size-4 shrink-0 text-muted" />
+              <span>{site.hoursText}</span>
             </p>
+            {site.email ? (
+              <p className="flex gap-3">
+                <MailIcon className="mt-1 size-4 shrink-0 text-muted" />
+                <a href={`mailto:${site.email}`} className="text-link text-ink">
+                  {site.email}
+                </a>
+              </p>
+            ) : null}
           </address>
           <StudioMap />
         </aside>
