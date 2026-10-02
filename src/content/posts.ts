@@ -28,7 +28,7 @@ export const posts: Post[] = [
     description:
       "What to ask, what to look for in a portfolio, and how to plan coverage when you book a wedding photographer in Coimbatore.",
     date: "2026-09-20",
-    related: { href: "/portfolio/weddings", label: "See our wedding portfolio" },
+    related: { href: "/portfolio/weddings", label: "See our wedding moments" },
     body: [
       { type: "p", text: "A Coimbatore wedding rarely fits into a single afternoon. Between the engagement, the muhurtham, the thali-tying and the reception, you may need coverage across two or three days, often at more than one venue. Choosing the right photographer is less about finding the most famous name and more about finding someone whose work, pace and people skills suit your family." },
       { type: "h2", text: "Look at complete weddings, not just highlights" },
@@ -55,7 +55,7 @@ export const posts: Post[] = [
     description:
       "When to book, what to wear, and the best light and locations for a maternity photoshoot in Coimbatore.",
     date: "2026-09-12",
-    related: { href: "/portfolio/maternity", label: "See our maternity & family portfolio" },
+    related: { href: "/portfolio/maternity", label: "See our maternity & family moments" },
     body: [
       { type: "p", text: "A maternity shoot is one of the few photo sessions planned around a moving deadline. A little planning makes the day relaxed rather than rushed, which is exactly what shows up in the pictures." },
       { type: "h2", text: "When to schedule it" },
@@ -104,11 +104,11 @@ export const posts: Post[] = [
   {
     slug: "best-photo-spots-coimbatore",
     keyword: "best photo spots in Coimbatore",
-    title: "Best photo spots in and around Coimbatore",
+    title: "Best pre-wedding photoshoot locations near Coimbatore",
     description:
-      "Lakefronts, temples, tree-lined roads and green countryside: places in and around Coimbatore that work beautifully for pre-wedding, couple and family shoots.",
+      "Lakefronts, temples, tree-lined roads and green countryside: the best photo spots in and around Coimbatore for pre-wedding, couple and outdoor family portrait shoots.",
     date: "2026-08-28",
-    related: { href: "/portfolio", label: "Browse the portfolio" },
+    related: { href: "/portfolio", label: "Browse our moments" },
     body: [
       { type: "p", text: "Coimbatore sits at the foot of the Western Ghats, so within an hour you can move from city lakefronts to temple towns and green countryside. Here are locations that work well for couple, pre-wedding and family portraits." },
       { type: "h2", text: "Valankulam and Ukkadam lakefronts" },

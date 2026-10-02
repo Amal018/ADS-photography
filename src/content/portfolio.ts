@@ -1,13 +1,11 @@
 /**
- * Portfolio images.
+ * Placeholder frames.
  *
- * Every entry currently points at a generated placeholder image (a plain,
- * clearly-labelled "photo to come" tile, not a real photo) in
- * /public/portfolio/<category>/. To add a real photo: replace the file at
- * that exact same path with a WebP (under 200KB, around 1600px on the long
- * edge) — same filename, same folder — and the site picks it up on the next
- * build with no code change. Regenerate the placeholders with
- * `node scripts/generate-placeholder-photos.mjs`.
+ * Real photos are not listed here: they are read from the folders in
+ * /public/photos (see public/photos/README.txt and src/lib/photos.ts).
+ * These entries only fill a spot while its folder is empty, using generated
+ * "photo to come" tiles in /public/portfolio/<category>/ (regenerate them with
+ * `node scripts/generate-placeholder-photos.mjs`).
  * Alt text should describe the subject and the location (SEO + accessibility).
  */
 

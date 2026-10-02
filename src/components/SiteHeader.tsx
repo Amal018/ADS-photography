@@ -14,7 +14,7 @@ export function SiteHeader() {
         Skip to content
       </a>
       <header className="sticky top-0 z-40 border-b border-line bg-paper/92 backdrop-blur-md">
-        <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between gap-6 px-5 sm:px-8">
+        <div className="mx-auto flex h-[5.5rem] max-w-6xl items-center justify-between gap-6 px-5 sm:px-8">
           <Link href="/" className="no-underline" aria-label={`${site.name}, home`}>
             <Wordmark />
           </Link>

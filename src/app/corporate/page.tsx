@@ -4,18 +4,20 @@ import { CtaBand } from "@/components/CtaBand";
 import { Photo } from "@/components/Photo";
 import { ArrowIcon } from "@/components/icons";
 import { corporateServices } from "@/content/corporate";
-import { photosFor } from "@/content/portfolio";
+import { gallery, photosIn } from "@/lib/photos";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Product Photography & Corporate Photography in Coimbatore",
+  title: "Commercial Photography Studio in Coimbatore",
   description:
-    "Product photography, monthly retainers, headshots and event coverage for Coimbatore businesses. Request a corporate quote from ADS Photography.",
+    "Commercial photography studio in Coimbatore: product photographer for catalogues and marketplaces, monthly retainers, headshots and corporate event photography. Request a quote.",
   path: "/corporate",
 });
 
 export default function CorporatePage() {
-  const product = photosFor("product");
+  // Big events and celebrations beside the retainer copy; product shots until event photos exist.
+  const events = photosIn("corporate/events", "product", { topic: "corporate event photography in Coimbatore" });
+  const showcase = events.length ? events : gallery("product");
   return (
     <>
       <PageHeader
@@ -76,7 +78,7 @@ export default function CorporatePage() {
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            {product.slice(0, 2).map((p) => (
+            {showcase.slice(0, 2).map((p) => (
               <Photo key={p.id} photo={p} ratio={4 / 5} sizes="(min-width: 1024px) 25vw, 50vw" />
             ))}
           </div>

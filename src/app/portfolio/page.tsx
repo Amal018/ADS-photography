@@ -1,14 +1,14 @@
-import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { PortfolioGallery } from "@/components/PortfolioGallery";
 import { CtaBand } from "@/components/CtaBand";
-import { categories, photos } from "@/content/portfolio";
+import { categories } from "@/content/portfolio";
+import { gallery } from "@/lib/photos";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Portfolio: Wedding Photography in Coimbatore",
+  title: "Wedding, Baby & Product Photography Gallery in Coimbatore",
   description:
-    "Browse wedding, maternity, family and product photography by ADS Photography, a photography studio in Coimbatore.",
+    "Browse candid wedding, maternity, baby, family portrait and product photography by ADS Photography, a professional photo studio in Coimbatore.",
   path: "/portfolio",
 });
 
@@ -16,18 +16,11 @@ export default function PortfolioPage() {
   return (
     <>
       <PageHeader
-        title="Portfolio"
-        intro="Wedding photography in Coimbatore, alongside maternity, family and product work. Filter by the kind of shoot you’re planning."
-      >
-        <Link href="/portfolio/weddings" className="btn btn-secondary">
-          Weddings
-        </Link>
-        <Link href="/portfolio/maternity" className="btn btn-secondary">
-          Maternity &amp; family
-        </Link>
-      </PageHeader>
+        title="Moments we’ve captured"
+        intro="Candid wedding photography in Coimbatore, alongside maternity, baby, family portrait and product work. Roll the dial to the kind of shoot you’re planning."
+      />
       <section className="mx-auto mt-12 max-w-6xl px-5 sm:px-8">
-        <PortfolioGallery photos={photos} filters={categories.map(({ id, label }) => ({ id, label }))} />
+        <PortfolioGallery photos={categories.flatMap(({ id }) => gallery(id))} filters={categories.map(({ id, label }) => ({ id, label }))} />
       </section>
       <CtaBand
         title="Like what you see?"

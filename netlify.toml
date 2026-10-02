@@ -1,6 +1,12 @@
+# Netlify build settings. The Next.js runtime plugin makes the contact form's
+# server action and image optimisation work.
 [build]
   command = "npm run build"
   publish = ".next"
+
+[build.environment]
+  # package.json requires Node >= 20.9
+  NODE_VERSION = "22"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"

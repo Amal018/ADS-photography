@@ -1,6 +1,6 @@
 import { PageHeader } from "@/components/PageHeader";
 import { ContactForm } from "@/components/ContactForm";
-import { MailIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
+import { ClockIcon, MailIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
 import { packages } from "@/content/packages";
 import { corporateServices } from "@/content/corporate";
 import { site, whatsappLink } from "@/content/site";
@@ -9,9 +9,9 @@ import { serviceOptions, type ServiceInterest } from "@/lib/inquiry";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Contact & Book a Photoshoot in Coimbatore",
+  title: "Book a Photographer in Coimbatore",
   description:
-    "Book a wedding, maternity, family or product photoshoot with ADS Photography in Coimbatore. Send an enquiry, WhatsApp us, or visit the studio.",
+    "Book a professional photographer in Coimbatore for a wedding, pre-wedding, maternity, baby, family or product photoshoot. Send an enquiry, WhatsApp us, or visit the studio.",
   path: "/contact",
 });
 
@@ -82,11 +82,17 @@ export default async function ContactPage({ searchParams }: { searchParams: Sear
               </a>
             </p>
             <p className="flex gap-3">
-              <MailIcon className="mt-1 size-4 shrink-0 text-muted" />
-              <a href={`mailto:${site.email}`} className="text-link text-ink">
-                {site.email}
-              </a>
+              <ClockIcon className="mt-1 size-4 shrink-0 text-muted" />
+              <span>{site.hoursText}</span>
             </p>
+            {site.email ? (
+              <p className="flex gap-3">
+                <MailIcon className="mt-1 size-4 shrink-0 text-muted" />
+                <a href={`mailto:${site.email}`} className="text-link text-ink">
+                  {site.email}
+                </a>
+              </p>
+            ) : null}
           </address>
           <StudioMap />
         </aside>

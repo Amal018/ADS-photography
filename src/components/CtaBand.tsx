@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { whatsappLink } from "@/content/site";
 import { ArrowIcon, WhatsAppIcon } from "./icons";
+import { ShutterButton } from "./motion/ShutterButton";
 
 /** Closing call to action at the foot of a page. */
 export function CtaBand({
@@ -27,9 +27,9 @@ export function CtaBand({
           <p className="mt-5 max-w-[46ch] text-lg text-on-night-soft">{text}</p>
         </div>
         <div className="flex flex-wrap gap-3">
-          <Link href={href} className="btn btn-light">
+          <ShutterButton href={href} className="btn btn-light">
             {cta} <ArrowIcon className="size-4" />
-          </Link>
+          </ShutterButton>
           <a href={whatsappLink(whatsappMessage)} className="btn btn-ghost-light">
             <WhatsAppIcon className="size-4" /> WhatsApp
           </a>

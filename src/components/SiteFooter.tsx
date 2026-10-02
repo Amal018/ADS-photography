@@ -12,7 +12,7 @@ export function SiteFooter() {
         <div>
           <Wordmark light />
           <p className="mt-5 max-w-[34ch] text-on-night-soft">
-            Photography studio in Coimbatore for weddings, maternity, families and businesses.
+            Photography studio in Coimbatore with {site.experience} of experience, for weddings, maternity, families and businesses.
           </p>
           {/* NAP: keep identical to the Google Business Profile listing. */}
           <address className="mt-6 space-y-1.5 not-italic text-on-night-soft">
@@ -22,11 +22,14 @@ export function SiteFooter() {
                 {site.phone}
               </a>
             </p>
-            <p>
-              <a href={`mailto:${site.email}`} className={linkClass}>
-                {site.email}
-              </a>
-            </p>
+            <p>{site.hoursText}</p>
+            {site.email ? (
+              <p>
+                <a href={`mailto:${site.email}`} className={linkClass}>
+                  {site.email}
+                </a>
+              </p>
+            ) : null}
           </address>
           <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
             <a href={whatsappLink()} className="text-link text-on-night">
