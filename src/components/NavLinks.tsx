@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { isCurrent } from "@/content/site";
 
 export function NavLinks({ items }: { items: readonly { href: string; label: string }[] }) {
   const pathname = usePathname();
   return (
     <ul className="flex items-center gap-7">
       {items.map((item) => {
-        const current = pathname.startsWith(item.href);
+        const current = isCurrent(pathname, item.href);
         return (
           <li key={item.href}>
             <Link

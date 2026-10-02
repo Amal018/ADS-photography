@@ -6,9 +6,9 @@ import { formatPrice, inclusionsConfirmed, packages } from "@/content/packages";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Photography Packages & Pricing in Coimbatore",
+  title: "Wedding Photography Packages & Prices in Coimbatore",
   description:
-    "Compare ADS Photography’s Essential, Signature and Luxury photography packages for weddings, maternity and family shoots in Coimbatore.",
+    "Compare budget to luxury wedding photography packages in Coimbatore, plus maternity, baby and family shoot packages. Price details for candid wedding and pre-wedding photography on request.",
   path: "/packages",
 });
 
@@ -16,8 +16,8 @@ export default function PackagesPage() {
   return (
     <>
       <PageHeader
-        title="Packages"
-        intro="Three ways to work with us, from an intimate session to a multi-day wedding. Every package can be adjusted to your plans."
+        title="Photography packages"
+        intro="Three ways to work with us, from an affordable intimate session to a multi-day wedding. Every package can be adjusted to your plans and budget."
       />
 
       <section aria-label="Packages" className="mx-auto mt-14 max-w-6xl px-5 sm:mt-20 sm:px-8">

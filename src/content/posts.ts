@@ -104,9 +104,9 @@ export const posts: Post[] = [
   {
     slug: "best-photo-spots-coimbatore",
     keyword: "best photo spots in Coimbatore",
-    title: "Best photo spots in and around Coimbatore",
+    title: "Best pre-wedding photoshoot locations near Coimbatore",
     description:
-      "Lakefronts, temples, tree-lined roads and green countryside: places in and around Coimbatore that work beautifully for pre-wedding, couple and family shoots.",
+      "Lakefronts, temples, tree-lined roads and green countryside: the best photo spots in and around Coimbatore for pre-wedding, couple and outdoor family portrait shoots.",
     date: "2026-08-28",
     related: { href: "/portfolio", label: "Browse the portfolio" },
     body: [

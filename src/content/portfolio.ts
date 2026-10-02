@@ -1,10 +1,9 @@
 /**
- * Portfolio images.
+ * Placeholder frames.
  *
- * To add a real photo: put a WebP (under 200KB, around 1600px on the long
- * edge) in /public/portfolio/<category>/ and set `src` to its public path.
- * Entries without a `src` render as labelled placeholder frames.
- * Alt text should describe the subject and the location (SEO + accessibility).
+ * Real photos are not listed here: they are read from the folders in
+ * /public/photos (see public/photos/README.txt and src/lib/photos.ts).
+ * These entries only fill a spot while its folder is empty.
  */
 
 export type Category = "weddings" | "maternity" | "family" | "product";

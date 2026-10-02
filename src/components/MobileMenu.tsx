@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
-import { nav, whatsappLink } from "@/content/site";
+import { isCurrent, nav, whatsappLink } from "@/content/site";
 import { MenuIcon, WhatsAppIcon } from "./icons";
 
 export function MobileMenu() {
@@ -49,7 +49,7 @@ export function MobileMenu() {
             <li key={item.href}>
               <Link
                 href={item.href}
-                aria-current={pathname.startsWith(item.href) ? "page" : undefined}
+                aria-current={isCurrent(pathname, item.href) ? "page" : undefined}
                 className="block px-3 py-3 text-lg text-ink no-underline hover:bg-stone aria-[current=page]:bg-stone"
               >
                 {item.label}

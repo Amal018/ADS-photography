@@ -4,18 +4,18 @@ import { CtaBand } from "@/components/CtaBand";
 import { Photo } from "@/components/Photo";
 import { ArrowIcon } from "@/components/icons";
 import { corporateServices } from "@/content/corporate";
-import { photosFor } from "@/content/portfolio";
+import { gallery } from "@/lib/photos";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Product Photography & Corporate Photography in Coimbatore",
+  title: "Commercial Photography Studio in Coimbatore",
   description:
-    "Product photography, monthly retainers, headshots and event coverage for Coimbatore businesses. Request a corporate quote from ADS Photography.",
+    "Commercial photography studio in Coimbatore: product photographer for catalogues and marketplaces, monthly retainers, headshots and corporate event photography. Request a quote.",
   path: "/corporate",
 });
 
 export default function CorporatePage() {
-  const product = photosFor("product");
+  const product = gallery("product");
   return (
     <>
       <PageHeader

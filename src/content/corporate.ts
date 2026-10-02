@@ -18,7 +18,7 @@ export const corporateServices: CorporateService[] = [
     summary:
       "Catalogue, marketplace and campaign photography for manufacturers, textile brands and online sellers.",
     metaDescription:
-      "Product photography in Coimbatore for e-commerce listings, catalogues and campaigns. White-background, lifestyle and detail shots with consistent, on-brand lighting.",
+      "Product photographer in Coimbatore for e-commerce listings, catalogues and campaigns. White-background, lifestyle and detail shots from a commercial photography studio.",
     outcomes: [
       "Marketplace-ready white-background images",
       "Lifestyle and in-use photographs for campaigns",
@@ -58,7 +58,7 @@ export const corporateServices: CorporateService[] = [
     summary:
       "Team headshots, leadership portraits, conferences, launches and annual days, photographed on location.",
     metaDescription:
-      "Corporate headshots and event photography in Coimbatore: team portraits, leadership photos, conferences, product launches and annual days.",
+      "Corporate event photographer and headshots in Coimbatore: team portraits, leadership photos, conferences, product launches and annual days.",
     outcomes: [
       "Consistent team headshots for website and LinkedIn",
       "Leadership portraits for press and annual reports",

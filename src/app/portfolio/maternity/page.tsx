@@ -2,13 +2,13 @@ import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { PortfolioGallery } from "@/components/PortfolioGallery";
 import { CtaBand } from "@/components/CtaBand";
-import { photosFor } from "@/content/portfolio";
+import { gallery } from "@/lib/photos";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Maternity & Family Photography in Coimbatore",
+  title: "Maternity, Newborn & Baby Photoshoot in Coimbatore",
   description:
-    "Maternity, valaikaappu, newborn and family photography in Coimbatore by ADS Photography, at home, outdoors or in the studio.",
+    "Maternity photoshoots, valaikaappu, newborn photography, baby and kids photoshoots, and family portraits in Coimbatore by ADS Photography, at home, outdoors or in the studio.",
   path: "/portfolio/maternity",
 });
 
@@ -16,12 +16,12 @@ export default function MaternityPage() {
   return (
     <>
       <PageHeader
-        title="Maternity & family photography"
-        intro="Maternity sessions, valaikaappu ceremonies, newborns and family portraits, at home, outdoors or in the studio."
+        title="Maternity, baby & family photography"
+        intro="Maternity photoshoots, valaikaappu ceremonies, newborn and baby photoshoots, kids sessions and family portraits in Coimbatore, at home, outdoors or in the studio."
       />
       <section className="mx-auto mt-12 max-w-6xl px-5 sm:px-8">
         <PortfolioGallery
-          photos={photosFor("maternity", "family")}
+          photos={[...gallery("maternity"), ...gallery("family")]}
           filters={[
             { id: "maternity", label: "Maternity" },
             { id: "family", label: "Family" },

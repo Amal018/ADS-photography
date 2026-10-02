@@ -44,7 +44,7 @@ SEO: every page has a unique title and meta description with a canonical URL. `L
 All placeholder content is kept in `src/content/`:
 
 - [ ] **`site.ts`**: phone, WhatsApp number, email, street address, PIN code, map coordinates (`geo`), opening hours, Google Business Profile link, Instagram, and any surrounding towns served. Then set `detailsConfirmed: true`. This publishes them in the structured data and turns on the map. Keep name, address and phone identical to the Google Business Profile listing.
-- [ ] **`portfolio.ts`**: add real photos. Save WebP files (under 200KB, about 1600px on the long edge) in `public/portfolio/…` and set `src` on each entry. Entries without `src` show a neutral "photo to come" slot.
+- [ ] **Photos** (`public/photos/`): one folder per spot on the site (home hero, services, selected work, each portfolio category, about). Add, replace or delete files there and the site updates, with no code changes. Folder map and naming rules: `public/photos/README.txt`. The current photos are small Instagram copies (about 512–640px), so swap in full-size exports. Product, family, studio and team folders are still empty and show "photo to come" frames.
 - [ ] **`packages.ts`**: real inclusions and rupee prices, then set `inclusionsConfirmed = true`. `price: null` shows "Prices to be announced".
 - [ ] **`testimonials.ts`**: real reviews only, with the client's permission and the original date. While this list is empty, the site shows an honest "reviews on their way" state.
 - [ ] **About page** (`src/app/about/page.tsx`): the studio story and team bios. They are marked "To be written".

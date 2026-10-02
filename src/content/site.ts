@@ -12,7 +12,7 @@
 export const site = {
   name: "ADS Photography",
   description:
-    "ADS Photography is a Coimbatore photography studio for weddings, maternity and family portraits, and corporate product shoots.",
+    "ADS Photography is a professional photographer and photo studio in Coimbatore, Tamil Nadu, for candid weddings, maternity and baby photoshoots, family portraits and product photography.",
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://ads-photography.vercel.app").replace(/\/$/, ""),
 
   /** Flip to true once the real details below are filled in. */
@@ -35,8 +35,8 @@ export const site = {
   hours: "", // PLACEHOLDER, e.g. "Mo-Sa 10:00-19:00"
   googleBusinessProfileUrl: "", // PLACEHOLDER: paste the Google Business Profile share link
   instagram: "", // PLACEHOLDER
-  // PLACEHOLDER: add the surrounding towns the studio actually serves.
-  areaServed: ["Coimbatore"],
+  // PLACEHOLDER: confirm these are the towns the studio actually serves.
+  areaServed: ["Coimbatore", "Pollachi", "Tirupur", "Mettupalayam", "Erode"],
 };
 
 export function whatsappLink(message?: string) {
@@ -60,6 +60,7 @@ export function formattedAddress() {
 }
 
 export const nav = [
+  { href: "/", label: "Home" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/packages", label: "Packages" },
   { href: "/corporate", label: "Corporate" },
@@ -67,3 +68,7 @@ export const nav = [
   { href: "/blog", label: "Journal" },
   { href: "/contact", label: "Contact" },
 ] as const;
+
+/** Whether a nav link is the current section; Home matches only itself. */
+export const isCurrent = (pathname: string, href: string) =>
+  href === "/" ? pathname === "/" : pathname.startsWith(href);

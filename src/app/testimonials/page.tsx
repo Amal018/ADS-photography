@@ -6,7 +6,7 @@ import { site } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Client Reviews & Testimonials",
+  title: "Client Reviews of Our Coimbatore Photography Studio",
   description: "What families and businesses in Coimbatore say about working with ADS Photography.",
   path: "/testimonials",
 });

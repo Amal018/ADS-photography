@@ -9,6 +9,8 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
+    "framer-motion": "^13.5.0",
+    "image-size": "^2.0.4",
     "next": "^16.3.6",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"

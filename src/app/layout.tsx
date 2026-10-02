@@ -4,6 +4,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { StickyCta } from "@/components/StickyCta";
 import { JsonLd, localBusinessSchema } from "@/components/JsonLd";
+import { CameraCursor } from "@/components/motion/CameraCursor";
+import { PageShutter } from "@/components/motion/PageShutter";
+import { FrameCounter } from "@/components/motion/FrameCounter";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -25,7 +28,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
     default: `${site.name} | Photography Studio in Coimbatore`,
-    template: `%s | ${site.name}, Coimbatore`,
+    template: `%s | ${site.name}`,
   },
   description: site.description,
   applicationName: site.name,
@@ -45,6 +48,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
         <SiteFooter />
         <StickyCta />
+        <FrameCounter />
+        <PageShutter />
+        <CameraCursor />
       </body>
     </html>
   );

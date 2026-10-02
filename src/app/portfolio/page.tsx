@@ -2,13 +2,14 @@ import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { PortfolioGallery } from "@/components/PortfolioGallery";
 import { CtaBand } from "@/components/CtaBand";
-import { categories, photos } from "@/content/portfolio";
+import { categories } from "@/content/portfolio";
+import { gallery } from "@/lib/photos";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Portfolio: Wedding Photography in Coimbatore",
+  title: "Photography Portfolio: Weddings, Baby & Product",
   description:
-    "Browse wedding, maternity, family and product photography by ADS Photography, a photography studio in Coimbatore.",
+    "Browse candid wedding, maternity, baby, family portrait and product photography by ADS Photography, a professional photo studio in Coimbatore.",
   path: "/portfolio",
 });
 
@@ -17,7 +18,7 @@ export default function PortfolioPage() {
     <>
       <PageHeader
         title="Portfolio"
-        intro="Wedding photography in Coimbatore, alongside maternity, family and product work. Filter by the kind of shoot you’re planning."
+        intro="Candid wedding photography in Coimbatore, alongside maternity, baby, family portrait and product work. Filter by the kind of shoot you’re planning."
       >
         <Link href="/portfolio/weddings" className="btn btn-secondary">
           Weddings
@@ -27,7 +28,7 @@ export default function PortfolioPage() {
         </Link>
       </PageHeader>
       <section className="mx-auto mt-12 max-w-6xl px-5 sm:px-8">
-        <PortfolioGallery photos={photos} filters={categories.map(({ id, label }) => ({ id, label }))} />
+        <PortfolioGallery photos={categories.flatMap(({ id }) => gallery(id))} filters={categories.map(({ id, label }) => ({ id, label }))} />
       </section>
       <CtaBand
         title="Like what you see?"
