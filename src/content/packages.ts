@@ -1,3 +1,5 @@
+export type Gear = "camera" | "video" | "album" | "drone";
+
 /** Package data model (build spec §4.1). */
 export type Package = {
   id: "essential" | "signature" | "luxury";
@@ -7,8 +9,8 @@ export type Package = {
   includes: string[];
   /** Price in rupees. `null` until the studio confirms figures (spec §8, decision 1). */
   price: number | null;
-  /** The lens each package is likened to on the site: wider coverage, wider lens. */
-  lens: { focal: 35 | 50 | 85; kind: string; note: string };
+  /** The gear that "unpacks" from the card on the site, in order. Keep it in step with `includes`. */
+  kit: Gear[];
 };
 
 // PLACEHOLDER: the inclusions below are a DRAFT outline, not confirmed
@@ -22,7 +24,7 @@ export const packages: Package[] = [
     name: "Essential",
     division: "events",
     description: "Focused coverage for intimate ceremonies, maternity and family sessions.",
-    lens: { focal: 35, kind: "Wide", note: "The essentials, in one frame" },
+    kit: ["camera"],
     includes: [
       "One photographer",
       "Up to 4 hours of coverage",
@@ -36,11 +38,12 @@ export const packages: Package[] = [
     name: "Signature",
     division: "events",
     description: "Full-day wedding coverage, from getting ready to the reception.",
-    lens: { focal: 50, kind: "Standard", note: "The whole day, as you saw it" },
+    kit: ["camera", "video", "album"],
     includes: [
       "Two photographers",
       "Full-day coverage",
       "Edited high-resolution images, delivered online",
+      "Highlight video",
       "Printed album",
       "Pre-wedding or couple session",
     ],
@@ -51,11 +54,12 @@ export const packages: Package[] = [
     name: "Luxury",
     division: "events",
     description: "Multi-day celebrations covered end to end, with film.",
-    lens: { focal: 85, kind: "Portrait", note: "Every detail, up close" },
+    kit: ["camera", "video", "drone", "album"],
     includes: [
       "Photo and video team",
       "Multi-day coverage",
       "Cinematic highlight film",
+      "Drone aerial coverage",
       "Premium printed albums",
       "Pre-wedding session at a location of your choice",
     ],

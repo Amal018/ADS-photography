@@ -4,7 +4,7 @@ import { CtaBand } from "@/components/CtaBand";
 import { ArrowIcon } from "@/components/icons";
 import { formatPrice, inclusionsConfirmed, packages, startingPrice } from "@/content/packages";
 import { pageMetadata } from "@/lib/seo";
-import { Lens, LensCard } from "@/components/motion/Lens";
+import { GearCard, Kit } from "@/components/motion/Gear";
 
 export const metadata = pageMetadata({
   title: "Wedding Photography Packages & Prices in Coimbatore",
@@ -18,7 +18,7 @@ export default function PackagesPage() {
     <>
       <PageHeader
         title="Photography packages"
-        intro="Three ways to work with us, from an affordable intimate session to a multi-day wedding. Pick your lens: every package can be adjusted to your plans and budget."
+        intro="Three ways to work with us, from an affordable intimate session to a multi-day wedding. Hover a package to unpack its kit; every package can be adjusted to your plans and budget."
       />
 
       <section aria-label="Packages" className="mx-auto mt-14 max-w-6xl px-5 sm:mt-20 sm:px-8">
@@ -34,14 +34,14 @@ export default function PackagesPage() {
         </p>
         <ol className="grid gap-5 lg:grid-cols-3">
           {packages.map((pkg, i) => (
-            <LensCard
+            <GearCard
               key={pkg.id}
               className={`flex flex-col border p-7 sm:p-9 ${
                 i === 1 ? "border-ink bg-white" : "border-line bg-white/60"
               }`}
             >
-              <div className="mb-7 flex min-h-[5.5rem] items-center border-b border-line pb-6">
-                <Lens lens={pkg.lens} />
+              <div className="mb-7 flex min-h-[5.5rem] items-end border-b border-line pb-6">
+                <Kit kit={pkg.kit} />
               </div>
               <h2 className="display text-4xl">{pkg.name}</h2>
               <p className="mt-3 text-ink-soft">{pkg.description}</p>
@@ -64,7 +64,7 @@ export default function PackagesPage() {
               >
                 Enquire about {pkg.name} <ArrowIcon className="size-4" />
               </Link>
-            </LensCard>
+            </GearCard>
           ))}
         </ol>
         <p className="mt-10 max-w-[65ch] text-ink-soft">

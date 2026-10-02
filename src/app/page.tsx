@@ -18,7 +18,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { ShutterButton } from "@/components/motion/ShutterButton";
 import { BeforeAfter } from "@/components/motion/BeforeAfter";
 import { Polaroid } from "@/components/motion/Polaroid";
-import { Lens } from "@/components/motion/Lens";
+import { GearCard, Kit } from "@/components/motion/Gear";
 import { JsonLd } from "@/components/JsonLd";
 import { faqs, faqSchema } from "@/content/faq";
 
@@ -222,19 +222,20 @@ export default function HomePage() {
           </Reveal>
           <ol className="mt-12 grid border-t border-line sm:grid-cols-3">
             {packages.map((pkg, i) => (
-              <li
+              <GearCard
                 key={pkg.id}
                 className={`border-b border-line py-8 sm:border-b-0 sm:py-10 ${i > 0 ? "sm:border-l sm:pl-8" : ""} ${i < 2 ? "sm:pr-8" : ""}`}
               >
+                {/* Outside Reveal so the card's hover reaches the gear. */}
+                <div className="mb-5 min-h-16">
+                  <Kit kit={pkg.kit} size="sm" />
+                </div>
                 <Reveal delay={i * 0.1}>
-                  <div className="mb-5">
-                    <Lens lens={pkg.lens} size="sm" standalone />
-                  </div>
                   <h3 className="display text-3xl">{pkg.name}</h3>
                   <p className="mt-3 text-ink-soft">{pkg.description}</p>
                   <p className="mt-6 text-sm font-medium text-muted">{formatPrice(pkg.price)}</p>
                 </Reveal>
-              </li>
+              </GearCard>
             ))}
           </ol>
         </div>
